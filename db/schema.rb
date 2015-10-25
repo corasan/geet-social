@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024223905) do
+ActiveRecord::Schema.define(version: 20151025152544) do
+
+  create_table "repositories", force: :cascade do |t|
+    t.string   "owner"
+    t.string   "name"
+    t.string   "description"
+    t.string   "full_name"
+    t.string   "repo_url"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "provider"

@@ -1,6 +1,6 @@
 <h1>Repos</h1>
 <div class="mdl-grid">
-  <% @repos.sort{|a,b| b["created_at"] <=> a["created_at"]}.each do |el| %>
+  <% @repos_info.sort{|a,b| b["created_at"] <=> a["created_at"]}.each do |el| %>
     <% repo_url = el["html_url"] %>
     <div class="mdl-cell mdl-cell--4-col">
       <div class="square-card mdl-card mdl-shadow--2dp">
