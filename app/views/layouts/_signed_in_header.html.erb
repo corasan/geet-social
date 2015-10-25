@@ -9,9 +9,6 @@
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" id="current-user"><%= current_user.username %></a>
-        <%= image_tag(@auth["info"]["image"], width: "50", heigth: "50", class: "img-circle") %>
-        <%= link_to "Sign out", "sign_out", method: :delete, class: "mdl-navigation__link" %>
       </nav>
 
       <button class="mdl-button mdl-js-button" id="user-img-menu">
@@ -19,18 +16,15 @@
       </button>
 
       <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="user-img-menu">
-        <li class="mdl-menu__item">Some Action</li>
-        <li class="mdl-menu__item">Another Action</li>
-        <li class="mdl-menu__item" disabled>Disabled Action</li>
-        <li class="mdl-menu__item">Yet Another Action</li>
+        <%= link_to "Profile", pages_profile_path, class: "mdl-menu__item" %>
+        <%= link_to "Sign out", "sign_out", method: :delete, class: "mdl-menu__item" %>
       </ul>
     </div>
   </header>
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Title</span>
+    <span class="mdl-layout-title"><i><%= image_tag(@auth["info"]["image"], width: "100", heigth: "100", class: "img-circle") %></i></span>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
+      <%= link_to "Profile", pages_profile_path, class: "mdl-navigation__link" %>
       <a class="mdl-navigation__link" href="">Link</a>
       <a class="mdl-navigation__link" href="">Link</a>
     </nav>
