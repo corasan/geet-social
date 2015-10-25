@@ -15,9 +15,8 @@ body #center-page-content {
   height: 50px !important;
 }*/
 
-a {
+a.remove-links-decor {
   text-decoration: none !important;
-  color: black !important;
 }
 
 .move-img {

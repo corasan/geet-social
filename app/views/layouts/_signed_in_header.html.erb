@@ -4,7 +4,8 @@
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title">Geet Social</span>
+      <span class="mdl-layout-title">
+        <%= link_to "Geet", root_url %></span>
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
@@ -22,11 +23,11 @@
     </div>
   </header>
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title move-img"><i><%= link_to image_tag(@auth["info"]["image"], width: "100", heigth: "100", class: "img-circle"), pages_profile_path %></i></span>
+    <span class="mdl-layout-title move-img"><i><%= link_to image_tag(@auth["info"]["image"], width: "150", heigth: "150", class: "img-circle"), pages_profile_path %></i></span>
     <nav class="mdl-navigation">
-      <%= link_to "Profile", pages_profile_path, class: "mdl-navigation__link" %>
-      <%= link_to "Repositories", "my_repos", class: "mdl-navigation__link" %>
-      <a class="mdl-navigation__link" href="">Link</a>
+      <%= link_to "Profile", pages_profile_path, class: "mdl-navigation__link remove-links-decor" %>
+      <%= link_to "Repositories", "my_repos", class: "mdl-navigation__link remove-links-decor" %>
+      <%= link_to "Log Out", "sign_out", class: "mdl-navigation__link remove-links-decor", method: :delete %>
     </nav>
   </div>
   <main class="mdl-layout__content">
