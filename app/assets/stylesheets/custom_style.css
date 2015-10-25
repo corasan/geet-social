@@ -15,7 +15,7 @@ body #center-page-content {
   height: 50px !important;
 }*/
 
-a.remove-links-decor {
+.remove-links-decor {
   text-decoration: none !important;
 }
 
@@ -26,4 +26,12 @@ a.remove-links-decor {
 .square-card.mdl-card {
   height: 320px;
   width: 320px;
+}
+
+.mdl-layout-title {
+  color: white;
+}
+
+.mdl-card__title {
+  background: #46B6AC;
 }

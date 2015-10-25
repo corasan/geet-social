@@ -1,20 +1,16 @@
 <!-- Always shows a header, even in smaller screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
-            mdl-layout--fixed-header">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
       <span class="mdl-layout-title">
-        <%= link_to "Geet", root_url %></span>
+        <%= link_to "Geet", root_url, class: "remove-links-decor", style: "color:white;" %>
+      </span>
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
       </nav>
-
-      <button class="mdl-button mdl-js-button" id="user-img-menu">
-        <!-- <i><%= image_tag(@auth["info"]["image"], width: "50", heigth: "50", class: "img-circle") %></i> -->
-      </button>
 
       <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="user-img-menu">
         <%= link_to "Profile", pages_profile_path, class: "mdl-menu__item" %>
