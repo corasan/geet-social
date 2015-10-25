@@ -7,6 +7,11 @@ class PagesController < ApplicationController
   def profile
   end
 
+  def my_repos
+    github = Github.new
+    @repos = github.repos.list user: current_user.username
+  end
+
   private
 
   def set_auth

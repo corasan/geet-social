@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   get 'pages/profile'
+  get 'my_repos', to: 'pages#my_repos', as: 'my-repos'
 
   get 'auth/:provider/callback', to: 'sessions#create'
 
