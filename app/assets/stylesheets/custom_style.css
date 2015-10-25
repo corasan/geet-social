@@ -1,0 +1,11 @@
+body {
+  padding-top: 0px !important;
+}
+
+body #center-page-content {
+  margin-left: 20px;
+}
+
+.img-circle {
+  border-radius: 50%;
+}

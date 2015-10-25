@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>GeetSocial</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-  <%= analytics_init if Rails.env.production? %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>GeetSocial</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+    <%= analytics_init if Rails.env.production? %>
+    <link href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.blue-indigo.min.css" rel="stylesheet">
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    <% if current_user %>
+      <%= render "layouts/signed_in_header" %>
+    <% else %>
+      <%= render "layouts/header" %>
+    <% end %>
+    <!-- <%= yield %> -->
+  </body>
 </html>
