@@ -4,6 +4,9 @@ class PagesController < ApplicationController
   before_action :authenticate_user!, :current_user, only: [:profile, :my_repos]
 
   def index
+    if current_user
+      redirect_to :controller => "pages", :action => "my_repos"
+    end
   end
 
   def profile

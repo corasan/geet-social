@@ -1,4 +1,4 @@
-<h1>Repos</h1>
+<h1>Repositories</h1>
 <div class="mdl-grid">
   <% @repos_info.sort{|a,b| b["created_at"] <=> a["created_at"]}.each do |el| %>
     <% repo_url = el["html_url"] %>
@@ -14,8 +14,10 @@
         <div class="mdl-card__actions mdl-card--border">
           <%= link_to "Visit Repository", repo_url, class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect remove-links-decor", target: "_blank" %><br>
           <div align="right">
-            <span class="material-icons mdl-badge" data-badge="<%= el['forks_count'] %>">call_split</span>
-            <span class="material-icons mdl-badge" data-badge="<%= el['open_issues_count'] %>">error</span>
+            <span id="forks" class="material-icons mdl-badge" data-badge="<%= el['forks_count'] %>">call_split</span>
+            <div class="mdl-tooltip" for="forks">Forks</div>
+            <span id="issues" class="material-icons mdl-badge" data-badge="<%= el['open_issues_count'] %>">error</span>
+            <div class="mdl-tooltip" for="issues">Issues</div>
           </div>
         </div>
       </div>

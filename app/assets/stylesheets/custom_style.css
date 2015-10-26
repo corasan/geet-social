@@ -33,5 +33,19 @@ body #center-page-content {
 }
 
 .mdl-card__title {
-  background: #46B6AC;
+  background: rgb(3, 169, 244);
 }
+
+.home-background {
+  background: white;
+  height: 500px;
+  width: 100%;
+}
+
+.fa {
+  margin-right: 20px;
+}
+
+/*.mdl-layout__header {
+  background: rgb(33,150,243);
+}*/

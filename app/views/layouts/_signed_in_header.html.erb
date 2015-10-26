@@ -21,9 +21,9 @@
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title move-img"><i><%= link_to image_tag(@auth["info"]["image"], width: "150", heigth: "150", class: "img-circle"), pages_profile_path %></i></span>
     <nav class="mdl-navigation">
-      <%= link_to "Profile", pages_profile_path, class: "mdl-navigation__link remove-links-decor" %>
-      <%= link_to "Repositories", "my_repos", class: "mdl-navigation__link remove-links-decor" %>
-      <%= link_to "Log Out", "sign_out", class: "mdl-navigation__link remove-links-decor", method: :delete %>
+      <%= link_to raw('<i class="fa fa-user fa-2x"></i>') + " Profile", pages_profile_path, class: "mdl-navigation__link remove-links-decor" %>
+      <%= link_to raw('<i class="fa fa-archive fa-2x"></i>') + "Repositories", "my_repos", class: "mdl-navigation__link remove-links-decor" %>
+      <%= link_to raw('<i class="fa fa-power-off fa-2x"></i>') + "Log Out", sign_out_path, class: "mdl-navigation__link remove-links-decor", method: :delete %>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -32,9 +32,9 @@
         <div class="mdl-cell mdl-cell--11-col">
 
           <%= yield %>
-
         </div>
       </div>
     </div>
+    <%= render "layouts/footer" %>
   </main>
 </div>
