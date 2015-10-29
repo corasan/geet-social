@@ -1,21 +1,15 @@
 require "pry"
 class PagesController < ApplicationController
   before_action :set_auth
-  before_action :authenticate_user!, :current_user, only: [:profile, :my_repos]
+  before_action :authenticate_user!, :current_user, only: [:profile]
 
   def index
     if current_user
-      redirect_to :controller => "pages", :action => "my_repos"
+      redirect_to :controller => "repositories", :action => "index"
     end
   end
 
   def profile
-  end
-
-  def my_repos
-    github = Github.new
-    @repos_info = github.repos.list user: current_user.username
-    Repository.save_repo_info(@repos_info)
   end
 
   private

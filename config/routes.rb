@@ -3,11 +3,13 @@ Rails.application.routes.draw do
 
   get 'pages/profile'
 
-  get 'my_repos', to: 'pages#my_repos', as: 'my_repos'
+  get 'repositories', to: 'repositories#index'
 
   get 'auth/:provider/callback', to: 'sessions#create'
 
   delete 'sign_out', to: 'sessions#destroy'
+
+  resources :repositories
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+damian = User.create([{ provider: 'github', name: 'Damian Lajara', username: 'damianlajara', email: "damian@gmail.com"}])
+Repository.create([{owner: 'damianlajara', name: 'test-repo', full_name: 'damianlajara/test-repo', repo_url: 'https//github.com/damianlajara/test-repo'}])

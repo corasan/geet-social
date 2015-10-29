@@ -9,8 +9,7 @@
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
-      </nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only"></nav>
 
       <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="user-img-menu">
         <%= link_to "Profile", pages_profile_path, class: "mdl-menu__item" %>
@@ -19,10 +18,15 @@
     </div>
   </header>
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title move-img"><i><%= link_to image_tag(@auth["info"]["image"], width: "150", heigth: "150", class: "img-circle"), pages_profile_path %></i></span>
+    <span class="mdl-layout-title move-img">
+      <i><%= link_to image_tag(@auth["info"]["image"], width: "150", heigth: "150", class: "img-circle"), pages_profile_path %></i>
+    </span>
+    <strong align="center" style="margin-right:10px;text-decoration:underline">
+      <%= link_to current_user.username, pages_profile_path %>
+    </strong>
     <nav class="mdl-navigation">
       <%= link_to raw('<i class="fa fa-user fa-2x"></i>') + " Profile", pages_profile_path, class: "mdl-navigation__link remove-links-decor" %>
-      <%= link_to raw('<i class="fa fa-archive fa-2x"></i>') + "Repositories", "my_repos", class: "mdl-navigation__link remove-links-decor" %>
+      <%= link_to raw('<i class="fa fa-archive fa-2x" style="margin-left:-3px"></i>') + "Repositories", repositories_path, class: "mdl-navigation__link remove-links-decor" %>
       <%= link_to raw('<i class="fa fa-power-off fa-2x"></i>') + "Log Out", sign_out_path, class: "mdl-navigation__link remove-links-decor", method: :delete %>
     </nav>
   </div>
@@ -30,7 +34,6 @@
     <div class="page-content" id="center-page-content">
       <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--11-col">
-
           <%= yield %>
         </div>
       </div>
